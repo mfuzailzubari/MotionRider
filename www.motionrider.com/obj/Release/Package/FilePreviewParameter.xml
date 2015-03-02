@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="fuzail.srsspk.com" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\MuhammadFuzail\\Dropbox\\Strahlen\ Studios\\Projects\\Hammad\ Bhai\\MotionRider\\Code\\MotionRider\\www\.motionrider\.com\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\MuhammadFuzail\\Dropbox\\Strahlen\ Studios\\Projects\\Hammad\ Bhai\\MotionRider\\Code\\MotionRider\\www\.motionrider\.com\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="strahlen_motionriderConnectionString-Web.config Connection String" description="" value="Data Source=204.93.178.45;Initial Catalog=strahlen_motionrider;Persist Security Info=True;User ID=strahlen_motionrider;Password=dLkwl4Y552" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\MuhammadFuzail\\Dropbox\\Strahlen\ Studios\\Projects\\Hammad\ Bhai\\MotionRider\\Code\\MotionRider\\www\.motionrider\.com\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='strahlen_motionriderConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

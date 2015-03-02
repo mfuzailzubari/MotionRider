@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="strahlen_motionrider_test" Class="ServerDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=204.93.178.45;Initial Catalog=strahlen_motionrider_test;User ID=strahlen_motionrider" SettingsObjectName="MotionRider.Properties.Settings" SettingsPropertyName="strahlen_motionrider_testConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.admin" Member="admins">
+    <Type Name="admin">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="admin_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="admin_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_picture" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="admin_email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_password" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_phone" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="admin_address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="admin_city" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="outlet_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="admin_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.motion_ride" Member="motion_rides">
+    <Type Name="motion_ride">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="motion_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="motion_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="motion_charges" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="motion_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.outlets" Member="outlets">
+    <Type Name="outlet">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="outlet_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="outlet_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="outlet_address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="outlet_city" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="outlet_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sales" Member="sales">
+    <Type Name="sale">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sales_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sales_total_amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="sales_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="sales_time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="sales_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="outlet_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sales_closing" Member="sales_closings">
+    <Type Name="sales_closing">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="closing_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="closing_start_sales_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="closing_end_sales_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="closing_total_amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="closing_login_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="closing_login_time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="closing_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="closing_logout_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="closing_logout_time" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.slush" Member="slushes">
+    <Type Name="slush">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="slush_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="slush_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="slush_price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="slush_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.slush_items_sales" Member="slush_items_sales">
+    <Type Name="slush_items_sale">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ss_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ss_quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ss_unit_price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ss_total_amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="sales_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="slush_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ss_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ticket_items_sales" Member="ticket_items_sales">
+    <Type Name="ticket_items_sale">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ts_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ts_quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ts_unit_price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ts_total_amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="motion_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sales_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ts_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

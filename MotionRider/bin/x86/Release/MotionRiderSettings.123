@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationSettings>
+  <ConnectionString ServerOrignal="Data Source=204.93.178.45;Initial Catalog=strahlen_motionrider;Persist Security Info=True;User ID=strahlen_motionrider;Password=dLkwl4Y552" Server="Data Source=204.93.178.45;Initial Catalog=strahlen_motionrider_test;Persist Security Info=True;User ID=strahlen_motionrider;Password=dLkwl4Y552" Local="Data Source=STRAHLEN;Initial Catalog=MotionRider;Integrated Security=True" />
+  <Slush SlushNo="1" />
+  <MotionRide MotionRideNo="4" />
+  <Login IsLogin="True" Date="13-Dec-14 12:00:00 AM" Time="19:56:08" StartInvoiceNo="4054" />
+  <Restart IsRestart="False" />
+  <UploadIDS sales="0" sales_closing="0" motion_ride="4" slush="4" slush_items_sales="0" ticket_items_sales="0" />
+  <PrintingOptions DoublePrintEnabled="True" />
+  <ApplicationStatus IsRunning="False" />
+</ApplicationSettings>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.625, 9.75" name="MotionRiderDB">
+  <DataContextMoniker Name="/MotionRiderDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="271ec722-ed5d-4281-b3c1-8049faab24c9" absoluteBounds="0.75, 0.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/MotionRiderDBDataContext/admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17ff1eda-f150-4681-8793-efffd6096a04" absoluteBounds="0.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="173fae2f-bd5a-4bf2-ad96-5f20cb943a6c" absoluteBounds="3.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/MotionRiderDBDataContext/motion_ride" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8d33703-0468-491a-9314-820a67807d4b" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a3061711-468e-4919-b69f-e79e4271c400" absoluteBounds="3.75, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/MotionRiderDBDataContext/outlet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40efd2e6-b318-4ae3-ac83-a51100c43385" absoluteBounds="3.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="798d16be-ba0b-45b9-9cd2-2c19e557dd33" absoluteBounds="6.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/MotionRiderDBDataContext/sale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4ead449-29c2-4a3c-9c0d-395951cfe072" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a7064cdd-ffce-462a-8f59-4c538fb01d3a" absoluteBounds="0.75, 6.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/MotionRiderDBDataContext/sales_closing" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ecd46ff5-0e73-443d-bf3c-4eac988b6f50" absoluteBounds="0.765, 7.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="825c9c00-6abc-43a2-9803-aa94fc28005e" absoluteBounds="6.75, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/MotionRiderDBDataContext/slush" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fe07357-cff1-4393-b1d9-6abe28ac048b" absoluteBounds="6.765, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac321a94-4067-475c-b90d-06dedd7b8bd2" absoluteBounds="3.75, 6.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/MotionRiderDBDataContext/slush_items_sale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40523cc7-6afc-4398-badd-cdd420b42a8b" absoluteBounds="3.765, 7.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f1f984e-6b89-44e1-b4f1-29502510b060" absoluteBounds="6.75, 6.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/MotionRiderDBDataContext/ticket_items_sale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b130bc0a-92d6-4ec6-b635-1beb483c2cad" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9bc74162-29c2-4f6d-b97d-1b36fadcfb43" absoluteBounds="9.375, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/MotionRiderDBDataContext/View_Ticket_DailySale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="32470ee9-0b9c-48fd-a320-b171aef9321a" absoluteBounds="9.39, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="53c19105-220d-4843-be3a-5c8d26d02012" absoluteBounds="9.375, 4.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/MotionRiderDBDataContext/View_Slush_DailySale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c6c13df-3763-4fdd-a5ae-d69f5f0d368b" absoluteBounds="9.39, 5.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,115 @@
+﻿html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: verdana,helvetica,arial,sans-serif;
+    font-size: 11px;
+    background-color: #f1f1f1;
+    color: rgb(85, 85, 85);
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: rgb(85, 85, 85);
+}
+/* ========== common style ========== */
+.box {
+    background-color: #ffffff;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 8px 10px 8px 10px;
+    box-shadow: #adacac 0px 2px 15px;
+}
+
+    .box ul li a {
+        /*color: #000000;*/
+        color: rgb(85, 85, 85);
+    }
+
+        .box ul li a:hover {
+            color: #428bca;
+            /*text-decoration: underline;*/
+            text-decoration:none;
+        }
+
+.cont-btns {
+    margin-top: 12px;
+}
+
+.nav-pad {
+    padding: 0 5px 0 5px;
+}
+
+/* ========== header ==========*/
+.header-box {
+    min-height: 100px;
+    padding: 10px 10px 0px 10px;
+}
+
+.site-title a > img {
+    margin-top: 5px;
+}
+
+.user-area {
+    min-height: 60px;
+    padding: 15px 0 20px 0;
+}
+
+    .user-area > img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        float: left;
+        /* width and height can be anything, as long as they're equal */
+    }
+
+    .user-area > div {
+        margin: 8px 0 0 8px;
+    }
+
+/* ========== ##header ==========*/
+
+/* ========== footer ==========*/
+footer {
+    color: rgb(85, 85, 85);
+    /*padding-top:10px;*/
+}
+
+.footer-box {
+    color: rgb(85, 85, 85);
+    text-align: center;
+}
+
+    .footer-box a {
+        color: rgb(85, 85, 85);
+        text-align: center;
+    }
+
+        .footer-box a:hover {
+            text-decoration: underline;
+            color: rgb(85, 85, 85);
+        }
+
+        .footer-box div {
+            text-align:center;
+            padding-bottom: 7px;
+        }
+
+/* ========== ##footer ========== */
+
+/* ========== left nav =========== */
+.left-nav {
+    list-style-type: none;
+    list-style-position: outside;
+    padding-left: 10px;
+}
+
+    .left-nav li {
+        font-size: 11px;
+        margin-bottom: 3px;
+    }
+/* ========== ##left nav =========== */

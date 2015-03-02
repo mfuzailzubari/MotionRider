@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MotionRider" Class="MotionRiderDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=strahlen;Initial Catalog=MotionRider;Integrated Security=True" SettingsObjectName="MotionRider.Properties.Settings" SettingsPropertyName="MotionRiderConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.admin" Member="admins">
+    <Type Name="admin">
+      <Column Name="admin_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="admin_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_picture" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="admin_email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_password" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_phone" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="admin_address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="admin_city" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="outlet_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="admin_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="outlet_admin" Member="outlet" ThisKey="outlet_id" OtherKey="outlet_id" Type="outlet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.friesncorn_items_sales" Member="friesncorn_items_sales">
+    <Type Name="friesncorn_items_sale">
+      <Column Name="fc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fc_quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fc_unit_price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fc_total_amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fries_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sales_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fc_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="friesncorn_friesncorn_items_sale" Member="friesncorn" ThisKey="fries_id" OtherKey="fries_id" Type="friesncorn" IsForeignKey="true" />
+      <Association Name="sale_friesncorn_items_sale" Member="sale" ThisKey="sales_id" OtherKey="sales_id" Type="sale" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.friesncorns" Member="friesncorns">
+    <Type Name="friesncorn">
+      <Column Name="fries_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fries_no" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fries_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="fries_charges" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fries_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="friesncorn_friesncorn_items_sale" Member="friesncorn_items_sales" ThisKey="fries_id" OtherKey="fries_id" Type="friesncorn_items_sale" />
+    </Type>
+  </Table>
+  <Table Name="dbo.motion_ride" Member="motion_rides">
+    <Type Name="motion_ride">
+      <Column Name="motion_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="motion_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="motion_charges" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="motion_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="motion_ride_ticket_items_sale" Member="ticket_items_sales" ThisKey="motion_id" OtherKey="motion_id" Type="ticket_items_sale" />
+    </Type>
+  </Table>
+  <Table Name="dbo.outlets" Member="outlets">
+    <Type Name="outlet">
+      <Column Name="outlet_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="outlet_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="outlet_address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="outlet_city" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="outlet_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="outlet_admin" Member="admins" ThisKey="outlet_id" OtherKey="outlet_id" Type="admin" />
+      <Association Name="outlet_sale" Member="sales" ThisKey="outlet_id" OtherKey="outlet_id" Type="sale" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sales" Member="sales">
+    <Type Name="sale">
+      <Column Name="sales_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sales_total_amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="sales_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="sales_time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="sales_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="outlet_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="sale_friesncorn_items_sale" Member="friesncorn_items_sales" ThisKey="sales_id" OtherKey="sales_id" Type="friesncorn_items_sale" />
+      <Association Name="sale_sales_closing" Member="sales_closings" ThisKey="sales_id" OtherKey="closing_start_sales_id" Type="sales_closing" />
+      <Association Name="sale_sales_closing1" Member="sales_closings1" ThisKey="sales_id" OtherKey="closing_end_sales_id" Type="sales_closing" />
+      <Association Name="sale_slush_items_sale" Member="slush_items_sales" ThisKey="sales_id" OtherKey="sales_id" Type="slush_items_sale" />
+      <Association Name="sale_ticket_items_sale" Member="ticket_items_sales" ThisKey="sales_id" OtherKey="sales_id" Type="ticket_items_sale" />
+      <Association Name="outlet_sale" Member="outlet" ThisKey="outlet_id" OtherKey="outlet_id" Type="outlet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sales_closing" Member="sales_closings">
+    <Type Name="sales_closing">
+      <Column Name="closing_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="closing_start_sales_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="closing_end_sales_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="closing_total_amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="closing_login_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="closing_login_time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="closing_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="closing_logout_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="closing_logout_time" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="sale_sales_closing" Member="sale" ThisKey="closing_start_sales_id" OtherKey="sales_id" Type="sale" IsForeignKey="true" />
+      <Association Name="sale_sales_closing1" Member="sale1" ThisKey="closing_end_sales_id" OtherKey="sales_id" Type="sale" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.slush" Member="slushes">
+    <Type Name="slush">
+      <Column Name="slush_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="slush_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="slush_price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="slush_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="slush_slush_items_sale" Member="slush_items_sales" ThisKey="slush_id" OtherKey="slush_id" Type="slush_items_sale" />
+    </Type>
+  </Table>
+  <Table Name="dbo.slush_items_sales" Member="slush_items_sales">
+    <Type Name="slush_items_sale">
+      <Column Name="ss_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ss_quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ss_unit_price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ss_total_amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="sales_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="slush_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ss_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="sale_slush_items_sale" Member="sale" ThisKey="sales_id" OtherKey="sales_id" Type="sale" IsForeignKey="true" />
+      <Association Name="slush_slush_items_sale" Member="slush" ThisKey="slush_id" OtherKey="slush_id" Type="slush" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ticket_items_sales" Member="ticket_items_sales">
+    <Type Name="ticket_items_sale">
+      <Column Name="ts_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ts_quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ts_unit_price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ts_total_amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="motion_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sales_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ts_comment" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="motion_ride_ticket_items_sale" Member="motion_ride" ThisKey="motion_id" OtherKey="motion_id" Type="motion_ride" IsForeignKey="true" />
+      <Association Name="sale_ticket_items_sale" Member="sale" ThisKey="sales_id" OtherKey="sales_id" Type="sale" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
